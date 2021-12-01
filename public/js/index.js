@@ -77,7 +77,6 @@ const updateProgress = (e) =>{
 
   progressContainer.style.display = 'block';
   const uploadPercent = Math.round((e.loaded / e.total) * 100 );
-  console.log(uploadPercent);
   bgProgress.style.width = `${uploadPercent}%`;
   percentage.innerText = `${uploadPercent}%`;
   progressLine.style.width = uploadPercent - 4 + "%";
@@ -107,7 +106,6 @@ emailForm.addEventListener('submit' , (e) =>{
     emailFrom : emailForm.elements["emailFrom"].value ,
     emailTo : emailForm.elements["emailTo"].value 
   }
-  console.table(formData)
   
   fetch(emailURL , {
     method : "POST" , 
@@ -119,7 +117,6 @@ emailForm.addEventListener('submit' , (e) =>{
   .then(result => {
 
     if(result.status === 200){
-        console.log('email sent!');
         linkContainer.style.display = 'none';
         emailSubmitBtn.innerText = 'Send';
         showToaster(result.message);
