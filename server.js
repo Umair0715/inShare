@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 const corsOptions = {
-  origin : process.env.ALLOWED_CLIENTS
+  origin : process.env.ALLOWED_CLIENTS.split(',')
 }
 app.use(cors(corsOptions));
 //template engine
