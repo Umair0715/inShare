@@ -1,0 +1,37 @@
+extends base
+block content 
+    .logo 
+      img(src='/img/logo.png' alt='logo')
+    section.upload-container
+      .drop-zone
+        .icon-container
+          img.center(src='./img/file.svg' alt='file icon')
+          img.right(src='./img/file.svg' alt='file icon')
+          img.left(src='./img/file.svg' alt='file icon')
+        input.fileInput(type='file')
+        div(class='choose__file-text') Drop your Files here or, 
+          span.browseBtn  browse 
+      .progress-container
+        .bg-progress
+        .inner-container
+          .uploading-text Uploading...
+          .percent-progress
+            span#percent 0%
+        .progress-line
+      .link-container
+        p Link expires in 24 hours 
+        .link-input-container
+          input.link-input(type='text')
+          img#copyBtn.copy-icon(src='./img/copy-icon.svg' alt='copy-icon')
+        p.send-email-text or send via Email
+        .email-container
+          form.email-form
+            .form-field
+              label(for='emailFrom') Your Email
+              input#emailFrom(type='email' required name='emailFrom')
+            .form-field
+              label(for='emailTo') Receiver's Email
+              input#emailTo(type='email' required name='emailTo')
+            button.submit-email-btn(type='submit') Send
+    .toaster email sent!
+    script(src='/js/index.js')

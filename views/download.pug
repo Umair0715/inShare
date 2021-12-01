@@ -1,0 +1,14 @@
+extends base 
+block content
+    .logo 
+      img(src='/img/logo.png' alt='logo')
+    .download__container 
+      img(src="/img/file-download.svg", alt="")
+      if (!error)
+        h2 Your File is ready to Download 
+        p.expire-text Link expires in 24 hours
+        h4.filename= fileName
+        span.size= `Size ${parseInt(fileSize / 1000)}KB`
+        a.download-btn(href=`${downloadLink}`) Download File 
+      else 
+        h1= error 
